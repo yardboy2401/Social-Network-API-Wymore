@@ -1,0 +1,22 @@
+{
+  "name": "week18-socialnetworkapi-wymore",
+  "version": "1.0.0",
+  "description": "Social Networking API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "seed": "node utils/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yardboy2401/week18-socialnetworkapi-wymore/issues"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "moment": "^2.29.1",
+    "mongoose": "^6.1.8"
+  }
+}
