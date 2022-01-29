@@ -14,6 +14,8 @@ const userSchema = new Schema(
         trim: true,
         lowercase: true,
         unique: true,
+
+        //validator for email address
         validate: {
             validator: function(v) {
                 return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
