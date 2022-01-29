@@ -6,13 +6,13 @@ connection.on('error', (err) => err);
 connection.once('open', async () => {
   console.log('connected');
 
-  // Drop existing courses
+  // Drop existing thoughts
   await Thought.deleteMany({});
 
-  // Drop existing students
+  // Drop existing users
   await User.deleteMany({});
 
-  // Create empty array to hold the usernames
+  // Create an array of usernames/emails
   const users = [
       {
           username: "fred",
@@ -24,6 +24,7 @@ connection.once('open', async () => {
       }
   ];
 
+  //create an array of thoughts/usernames
   const thoughts = [
       {
           thoughtText: "Many, many moons ago...",
