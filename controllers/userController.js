@@ -1,13 +1,16 @@
 const { Thought } = require('../models');
 const User = require('../models/User');
 
+//export User methods 
 module.exports = {
+  //get all users
   getUsers(req, res) {
     User.find({})
       .then(dbUserData => res.json(dbUserData))
       .catch(err => res.status(500).json(err));
   },
   
+  //get a single user by Id
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
     .populate("thoughts")
@@ -24,6 +27,7 @@ module.exports = {
   },
   
   // create a new user
+  //use path /api/users/ with body expecting username and email (must be valid unique email address)
   createUser(req, res) {
     User.create(req.body)
       .then((dbUserData) => res.json(dbUserData))
@@ -31,6 +35,8 @@ module.exports = {
   },
 
   
+  //update a single user by Id
+  //use path /api/users/userId with body expecting username and email (must be valid unique email address)
   updateSingleUser({ params, body }, res)  {
     User.findOneAndUpdate({ _id: params.userId }, body, { runValidators: true })
     .then((dbUserData) => {
@@ -43,7 +49,8 @@ module.exports = {
     .catch(err => res.status(500).json(err));  
   },
 
-  
+  //delete a single user by Id
+  //use path /api/users/userId
   deleteSingleUser({ params }, res) {
     User.findOneAndDelete({ _id: params.userId })
     .then(dbUserData => {
@@ -67,6 +74,8 @@ module.exports = {
   },
 
   
+  //add a Friend by Id
+  //use path /api/users/userId/friends/friendId
   addFriend(req, res) {
 
     User.findOneAndUpdate(
@@ -84,7 +93,8 @@ module.exports = {
     .catch(err => res.status(500).json(err));
   },
 
-  
+  //delete a friend by Id
+  //use route /api/users/userId/friends/friendId
   deleteFriend({ params}, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
