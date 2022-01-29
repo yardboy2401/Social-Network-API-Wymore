@@ -1,3 +1,4 @@
+//require express Router
 const router = require('express').Router();
 
 //requires for User/Friend methods
