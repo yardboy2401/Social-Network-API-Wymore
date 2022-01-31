@@ -17,7 +17,13 @@ Because this application won’t be deployed, you’ll also need to create a wal
 
 ## Link to GitHub Repository
 
-https://github.com/yardboy2401/week18-socialnetworkapi-wymore
+https://github.com/yardboy2401/Social-Network-API-Wymore
+
+## Link to Walkthrough Video
+
+https://drive.google.com/file/d/15X9lbNTULq1Rj4RKne5rO3fsph3jnHpD/view?usp=sharing
+
+https://drive.google.com/file/d/1OiWLlYDotucoj-DrxehMuy_XlsgQRxi_/view?usp=sharing
 
 ## Screenshots
 
